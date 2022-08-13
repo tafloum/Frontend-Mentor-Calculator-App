@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="themeOneBody">
+    <main>
+      <div class="cal-container">
+        <div class="cal-title theme1CalTitle row d-flex mt-4 fs-5">
+          <div class="col mt-4 ">calc</div>
+          <div class="col d-flex ">
+            <div class="col mt-4">Theme</div>
+            <div class="col">
+              
+                <div class="switch-themes" id="switch-themes">
+                  <label class="theme" id="theme-one">1</label>
+                  <label  class="theme" id="theme-two">2</label>
+                  <label  class="theme" id="theme-three">3</label>
+                </div>
+                <div class="switch-button">
+                  <div class="theme-toggler theme1Toggle" id="theme1"></div>
+                  <div class="theme-toggler theme2Toggle" id="theme2"></div>
+                  <div class="theme-toggler theme3Toggle" id="theme3"></div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+        <div class="cal-body">
+          <div class="display themeOneDisplay mt-3"></div>
+          <div class="input themeOneInputColor mt-3 p-1">
+            <div class="row">
+              <button class="col input-button themeOneButSha">7</button>
+              <button class="col input-button themeOneButSha">8</button>
+              <button class="col input-button themeOneButSha">9</button>
+              <button class="col clear-button del themeOneClearButton">Del</button>
+            </div>
+            <div class="row">
+              <button class="col input-button themeOneButSha">4</button>
+              <button class="col input-button themeOneButSha">5</button>
+              <button class="col input-button themeOneButSha">6</button>
+              <button class="col input-button themeOneButSha">+</button>
+            </div>
+            <div class="row">
+              <button class="col input-button themeOneButSha">1</button>
+              <button class="col input-button themeOneButSha">2</button>
+              <button class="col input-button themeOneButSha">3</button>
+              <button class="col input-button themeOneButSha">-</button>
+            </div>
+            <div class="row">
+              <button class="col input-button themeOneButSha">.</button>
+              <button class="col input-button themeOneButSha">0</button>
+              <button class="col input-button themeOneButSha">/</button>
+              <button class="col input-button themeOneButSha">*</button>
+            </div>
+            <div class="row">
+              <button class="reset col clear-button themeOneClearButton" id="reset-button">Reset</button>
+              <button class="col equal themeOneEqual">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Tafsiru Loum</a>.
+      </div>
+    </footer>
+  </body>
+  <script src="./calApp.js"></script>
+</html>
