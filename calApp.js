@@ -56,7 +56,7 @@ function calculate(){
 
 
 
-
+// Calculator Themes Function
 
 
 function themeToggler(){
