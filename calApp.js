@@ -1,15 +1,12 @@
-const output = document.querySelector(".display");
+
+// Const variables
+
+const displayOuput = document.querySelector(".display");
 const input = document.querySelectorAll("button");
-const reset = document.querySelector('.reset');
-
-
-// Changing theme colors
-
 const bodyEliBackgroundColor = document.querySelector('.body');
 const themes = document.querySelector('.switch-button');
 const themeToggler = document.querySelector('#themes');
 const calculatorTitle = document.querySelector('.cal-title');
-const displayOuput = document.querySelector('.display');
 const inputSection = document.querySelector('.input');
 const inputButton = document.querySelectorAll('.input-button');
 const clearButton = document.querySelectorAll('.clear-button');
@@ -23,31 +20,38 @@ input.forEach(key=>{
 
 function calculate(){
     let buttonText = this.innerText;
+    let operatorsButton = "./*-+";
+    
     if(buttonText == 'RESET'){
-        output.textContent = '';
+        displayOuput.textContent = '';
         return;   
-    }
-    if(buttonText == "DEL"){
-        output.textContent = output.textContent.substr(0,output.textContent.length-1);
+    }else if(buttonText == "DEL"){
+        displayOuput.textContent = displayOuput.textContent.slice(0,displayOuput.textContent.length-1);
         return;
-    }
-    if(buttonText == "="){
-        output.innerText = eval(output.innerText);
-        output.style.animation = "big 0.5s ease-in-out";  
-    }
-    else{
-        output.textContent += buttonText;
+    }else if(buttonText == "="){
+        displayOuput.innerText = eval(displayOuput.innerText);
+        return; 
+    }else{
+        displayOuput.textContent += buttonText;
         return;
     }
 }
 
 
+// Themes Toggler Function
 
-// Theme Toggler Function
+themes.addEventListener('click', (event) => {
+    event.preventDefault();
 
-themes.addEventListener('click', () => {
+    switchToggler();
     
-    if(themeToggler == document.querySelector('.themeOne-toggler')){
+})
+
+// Switch Toggler Function
+function switchToggler(){
+    if(document.querySelector('.themeOne-toggler')){
+        themes.classList.remove('switchButBackColorOne');
+        themes.classList.add('switchButBackColorTwo');
         themeToggler.classList.remove('themeOne-toggler');
         themeToggler.classList.add('themeTwo-toggler');
         bodyEliBackgroundColor.classList.remove("themeOneBody");
@@ -69,7 +73,9 @@ themes.addEventListener('click', () => {
             key.classList.add("themeTwoButSha");
         })
         
-    }else if(themeToggler == document.querySelector('.themeTwo-toggler')){
+    }else if(document.querySelector('.themeTwo-toggler')){
+        themes.classList.remove('switchButBackColorTwo');
+        themes.classList.add('switchButBackColorThree');
         themeToggler.classList.remove('themeTwo-toggler');
         themeToggler.classList.add('themeThree-toggler');
         bodyEliBackgroundColor.classList.remove("themeTwoBody");
@@ -90,7 +96,9 @@ themes.addEventListener('click', () => {
             key.classList.remove("themeTwoButSha");
             key.classList.add("themeThreeButSha");
         })
-    }else if(themeToggler == document.querySelector('.themeThree-toggler')){
+    }else if(document.querySelector('.themeThree-toggler')){
+        themes.classList.remove('switchButBackColorThree');
+        themes.classList.add('switchButBackColorOne');
         themeToggler.classList.remove('themeThree-toggler');
         themeToggler.classList.add('themeOne-toggler');
         bodyEliBackgroundColor.classList.remove("themeThreeBody");
@@ -112,8 +120,7 @@ themes.addEventListener('click', () => {
             key.classList.add("themeOneButSha");
         })
     }
-    
-})
+}
 
 
 
