@@ -20,7 +20,6 @@ input.forEach(key=>{
 
 function calculate(){
     let buttonText = this.innerText;
-    let operatorsButton = "./*-+";
     
     if(buttonText == 'RESET'){
         displayOuput.textContent = '';
@@ -46,9 +45,15 @@ themes.addEventListener('click', (event) => {
     switchToggler();
     
 })
+const theme1 = document.querySelector(".theme1");
+const theme2 = document.querySelector(".theme2");
+const theme3 = document.querySelector(".theme3");
+
+// console.log(theme1);
 
 // Switch Toggler Function
 function switchToggler(){
+    
     if(document.querySelector('.themeOne-toggler')){
         themes.classList.remove('switchButBackColorOne');
         themes.classList.add('switchButBackColorTwo');
@@ -120,6 +125,7 @@ function switchToggler(){
             key.classList.add("themeOneButSha");
         })
     }
+
 }
 
 
